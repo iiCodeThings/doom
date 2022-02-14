@@ -4,21 +4,25 @@ from flask import Flask
 from doom import commands
 from doom.api import sms_api
 from doom.settings import get_config
-from doom.extensions import (
-    db,
-    bcrypt,
-    migrate,
-)
+from doom.extensions import db
+from doom.extensions import bcrypt
+from doom.extensions import migrate
+from doom.api.tasks import async_blueprint
 
 
 def create_app(config_object=get_config()):
     app = Flask(__name__)
     app.config.from_object(config_object)
+    configure_logger(app)
+    register_commands(app)
     register_extensions(app)
     register_shellcontext(app)
-    register_commands(app)
-    configure_logger(app)
+    app_register_blueprints(app)
     return app
+
+
+def app_register_blueprints(app):
+    app.register_blueprint(async_blueprint)
 
 
 def register_extensions(app):
