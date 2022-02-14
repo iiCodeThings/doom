@@ -1,0 +1,7 @@
+Flask
+Flask-Bcrypt
+Flask-Migrate
+Flask-RESTful
+Flask-SQLAlchemy
+PyYAML
+mysql-connector-python

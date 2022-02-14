@@ -1,0 +1,1 @@
+SQLALCHEMY_DATABASE_URI: mysql+mysqlconnector://root:xiaoyezi.xyz@localhost/doom?charset=utf8mb4
