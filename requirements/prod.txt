@@ -3,5 +3,7 @@ Flask-Bcrypt
 Flask-Migrate
 Flask-RESTful
 Flask-SQLAlchemy
+clery
+redis
 PyYAML
 mysql-connector-python
